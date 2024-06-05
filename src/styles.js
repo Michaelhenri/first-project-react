@@ -8,12 +8,13 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 28px;
 
 `
 
 export const Image = styled.img`
     margin-top: 30px;
+    height: 150px;
 `
 
 export const ContainerItens = styled.div`
@@ -25,7 +26,7 @@ export const ContainerItens = styled.div`
     );
     border-radius: 40px 40px 0px 0px;
 
-    padding: 40px 26px;
+    padding: 30px 16px;
 
     display: flex;
     flex-direction: column;
@@ -57,10 +58,11 @@ export const InputLabel = styled.p`
 `
 
 export const Input = styled.input`
-    width: 342px;
+    width: 328px;
     height: 58px;
     padding-left: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    margin-left: 6px;
     border-radius: 14px 14px 14px 14px;
     border: none;
     outline: none;
@@ -84,7 +86,7 @@ export const Button = styled.button`
 
     background: rgba(0, 0, 0, 0.8);
 
-    margin-top: 40px;
+    margin-top: 35px;
 
     font-size: 17px;
     font-weight: 700;
@@ -97,5 +99,13 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
     gap: 20px;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:active{
+        opacity: 0.5;
+    }
 
 `
