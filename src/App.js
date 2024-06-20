@@ -2,8 +2,9 @@ import React from 'react'
 
 import People from './assets/people.svg'
 import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
 
-import { Container, Image, ContainerItens, H1, InputLabel, Input, Button } from './styles'
+import { Container, Image, ContainerItens, H1, InputLabel, Input, Button, User } from './styles'
 
 const App = () => {
   const users = [
@@ -29,9 +30,10 @@ const App = () => {
 
         <ul>
           {users.map((user) => (
-            <li key={user.id}>
-              {user.name} - {user.age}
-            </li>
+            <User key={user.id}>
+              <p>{user.name}</p> <p>{user.age}</p>
+              <button><img src={Trash} alt='lata-de-lixo'/></button>
+            </User>
           ))}
         </ul>
 

@@ -31,7 +31,7 @@ export const ContainerItens = styled.div`
     display: flex;
     flex-direction: column;
 
-    height: 80vh;
+    height: 100vh;
 
 `
 
@@ -47,7 +47,7 @@ export const H1 = styled.h1`
 
 export const InputLabel = styled.p`
     color: #eeeeee;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 22px;
     letter-spacing: -0.41px;
@@ -71,7 +71,7 @@ export const Input = styled.input`
 
     box-shadow: 0px 4px 4px 0px #00000040;
 
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     color: #ffffff;
@@ -108,4 +108,42 @@ export const Button = styled.button`
         opacity: 0.5;
     }
 
+`
+
+
+export const User = styled.li`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+
+    width: 328px;
+    height: 58px;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #ffffff;
+
+    border: none;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 14px;
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 28px;
+
+        color: #ffffff;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 `
