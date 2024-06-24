@@ -86,7 +86,7 @@ export const Button = styled.button`
 
     background: rgba(0, 0, 0, 0.8);
 
-    margin-top: 35px;
+    margin-top: 30px;
 
     font-size: 17px;
     font-weight: 700;

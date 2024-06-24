@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useRef } from 'react'
 
 import People from './assets/people.svg'
 import Arrow from './assets/arrow.svg'
@@ -8,32 +8,25 @@ import { Container, Image, ContainerItens, H1, InputLabel, Input, Button, User }
 
 const App = () => {
   const [users, setUsers] = useState([]);
-  const [name, setName] = useState();
-  const [age, setAge] = useState();
+  const inputName = useRef()
+  const inputAge = useRef()
 
-  function addNewUser(){
-    setUsers([{id: Math.random(), name, age}])
-  }
 
-  function changeInputName(event){
-    setName(event.target.value)
-  }
-
-  function changeInputAge(event){
-    setAge(event.target.value)
+  function addNewUser() {
+    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])
   }
 
   return (
     <Container>
       <Image alt='logo-image' src={People} />
       <ContainerItens>
-        <H1>Olá!</H1>
+        <H1>DevUsers</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input onChange={changeInputName} placeholder='Nome' />
+        <Input ref={inputName} placeholder='Nome' />
 
         <InputLabel>Idade</InputLabel>
-        <Input onChange={changeInputAge} placeholder='Idade' />
+        <Input ref={inputAge} placeholder='Idade' />
 
         <Button onClick={addNewUser}>
           Cadastrar <img alt='img-seta' src={Arrow} />
@@ -43,7 +36,7 @@ const App = () => {
           {users.map((user) => (
             <User key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button><img src={Trash} alt='lata-de-lixo'/></button>
+              <button><img src={Trash} alt='lata-de-lixo' /></button>
             </User>
           ))}
         </ul>
