@@ -1,38 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
 
-import People from './assets/people.svg'
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import Avatar from '../../assets/avatar.svg'
+import Arrow from '../../assets/arrow.svg'
+import Trash from '../../assets/trash.svg'
 
 import {
   Container,
   Image,
   ContainerItens,
   H1,
-  InputLabel,
-  Input,
   Button,
   User
 } from './styles'
 
-const App = () => {
+const Users = () => {
   const [users, setUsers] = useState([]);
-  const inputName = useRef()
-  const inputAge = useRef()
-
-// Add usuarios
-  async function addNewUser() {
-
-    const { data: newUser } = await axios.post("http://localhost:3001/users", {
-      name: inputName.current.value,
-      age: inputAge.current.value,
-    });
-
-    setUsers([...users, newUser])
-
-  }
 
  //Guarda usuários 
   useEffect(() => {
@@ -57,19 +41,9 @@ const App = () => {
 
   return (
     <Container>
-      <Image alt='logo-image' src={People} />
+      <Image alt='logo-image' src={Avatar} />
       <ContainerItens>
-        <H1>DevUsers</H1>
-
-        <InputLabel>Nome</InputLabel>
-        <Input ref={inputName} placeholder='Nome' />
-
-        <InputLabel>Idade</InputLabel>
-        <Input ref={inputAge} placeholder='Idade' />
-
-        <Button onClick={addNewUser}>
-          Cadastrar <img alt='img-seta' src={Arrow} />
-        </Button>
+        <H1>Usuários</H1>
 
         <ul>
           {users.map((user) => (
@@ -82,9 +56,13 @@ const App = () => {
           ))}
         </ul>
 
+        <Button>
+        <img alt='img-seta' src={Arrow} /> Voltar
+        </Button>
+
       </ContainerItens>
     </Container>
   )
 }
 
-export default App
+export default Users;
