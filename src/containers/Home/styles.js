@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Backgound from '../../assets/background1.svg'
 
 export const Container = styled.div`
@@ -78,13 +79,48 @@ export const Input = styled.input`
 
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     width: 342px;
     height: 74px;
     border-radius: 14px 14px 14px 14px;
     border: none;
+    text-decoration: none;
 
     background: rgba(0, 0, 0, 0.8);
+
+    margin-top: 30px;
+
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:active{
+        opacity: 0.5;
+    }
+
+`
+
+export const ButtonUsers = styled(Link)`
+
+width: 342px;
+    height: 74px;
+    border-radius: 14px 14px 14px 14px;
+    border: 1px solid #ffffff;
+    text-decoration: none;
+
+    background: transparent;
 
     margin-top: 30px;
 

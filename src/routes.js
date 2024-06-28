@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes as MyRoutes, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes as MyRoutes, Route } from 'react-router-dom';
 
 import Home from "./containers/Home";
 import Users from "./containers/Users";

@@ -56,7 +56,7 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button>
+        <Button to='/'>
         <img alt='img-seta' src={Arrow} /> Voltar
         </Button>
 

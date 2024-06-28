@@ -13,6 +13,7 @@ import {
   InputLabel,
   Input,
   Button,
+  ButtonUsers
 } from './styles'
 
 const App = () => {
@@ -44,9 +45,13 @@ const App = () => {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder='Idade' />
 
-        <Button onClick={addNewUser}>
+        <Button to="/usuarios" onClick={addNewUser}>
           Cadastrar <img alt='img-seta' src={Arrow} />
         </Button>
+
+        <ButtonUsers to="/usuarios">
+          Usuarios <img alt='img-seta' src={Arrow} />
+        </ButtonUsers>
 
       </ContainerItens>
     </Container>
