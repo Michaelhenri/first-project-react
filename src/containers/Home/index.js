@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -20,6 +21,7 @@ const App = () => {
   const [users, setUsers] = useState([]);
   const inputName = useRef()
   const inputAge = useRef()
+  const navigate = useNavigate()
 
   // Add usuarios
   async function addNewUser() {
@@ -31,6 +33,12 @@ const App = () => {
 
     setUsers([...users, newUser])
 
+    navigate('/usuarios')
+
+  }
+
+  function goFowardPage(){
+    navigate("/usuarios")
   }
 
   return (
@@ -45,11 +53,11 @@ const App = () => {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder='Idade' />
 
-        <Button to="/usuarios" onClick={addNewUser}>
+        <Button onClick={addNewUser}>
           Cadastrar <img alt='img-seta' src={Arrow} />
         </Button>
 
-        <ButtonUsers to="/usuarios">
+        <ButtonUsers onClick={goFowardPage}>
           Usuarios <img alt='img-seta' src={Arrow} />
         </ButtonUsers>
 

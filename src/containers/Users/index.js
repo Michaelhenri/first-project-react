@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -17,8 +18,10 @@ import {
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate()
 
- //Guarda usuários 
+
+  //Guarda usuários 
   useEffect(() => {
 
     async function fetchUsers() {
@@ -30,13 +33,17 @@ const Users = () => {
     fetchUsers()
   }, [])
 
- //Deleta usuários 
+  //Deleta usuários 
   async function deleteUser(userId) {
     await axios.delete(`http://localhost:3001/users/${userId}`)
 
     const newUsers = users.filter((user) => user.id !== userId);
 
     setUsers(newUsers)
+  }
+
+  function goBackPage() {
+    navigate("/")
   }
 
   return (
@@ -56,8 +63,8 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button to='/'>
-        <img alt='img-seta' src={Arrow} /> Voltar
+        <Button onClick={goBackPage}>
+          <img alt='img-seta' src={Arrow} /> Voltar
         </Button>
 
       </ContainerItens>

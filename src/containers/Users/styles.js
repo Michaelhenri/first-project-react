@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import Backgound from '../../assets/background.svg'
 
 export const Container = styled.div`
@@ -34,6 +33,13 @@ export const ContainerItens = styled.div`
     flex-direction: column;
 
     height: 100vh;
+    min-height: calc(100vh - 170px);
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+    display: none;
+  }
 
 `
 
@@ -47,7 +53,7 @@ export const H1 = styled.h1`
 
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
     width: 342px;
     height: 74px;
     border-radius: 14px 14px 14px 14px;
